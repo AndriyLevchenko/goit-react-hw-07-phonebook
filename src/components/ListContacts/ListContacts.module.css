@@ -1,0 +1,18 @@
+.titleName {
+    padding: 0px;
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.button {
+    cursor: pointer;
+    text-align: auto;
+    background-color: aquamarine;
+    margin: 0;
+    border-width: 1px;
+    border-radius: 3px;
+}
+.name {
+    margin-left: 10px;
+    margin: 0px;
+}
