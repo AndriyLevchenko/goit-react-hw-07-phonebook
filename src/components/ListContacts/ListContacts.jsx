@@ -1,4 +1,4 @@
-import React from 'react';
+
 import css from 'components/ListContacts/ListContacts.module.css';
 import PropTypes from 'prop-types';
 
