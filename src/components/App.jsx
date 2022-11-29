@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { Form } from 'components/Form/Form';
 import { Filter } from 'components/Filter/Filter';
-import { ListContacts } from 'components/ListContacts/ListContacts';
+import { ListContacts } from './ListContacts/ListContacts';
 import css from 'components/App.module.css';
 
 export const App = () => {
@@ -22,21 +22,8 @@ export const App = () => {
       setContacts(prevState => [contact, ...prevState],
   )}
 
-  const deleteContact = contactId => {
-   setContacts(prevState =>
-    prevState.filter(contact => contact.id !== contactId)
-  )
-  }
-
   const inputFilterForm = (event) => {
     setFilter(event.currentTarget.value)
-  }
-
-  const getFilteredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact => 
-      contact.name.toLowerCase().includes(normalizedFilter),
-    );
   }
 
   useEffect (() => {
@@ -49,14 +36,13 @@ export const App = () => {
     setContacts (parsedContacts)
   }, [])
 
-  const filteredContacts = getFilteredContacts();
   return (
     <div>
       <h2 className={css.title}>Phonebook</h2>
       <Form onSubmit={formSubmitHandler}/>
       <h2 className={css.title}>Contacts</h2>
       <Filter value={filter} onChange={inputFilterForm}/>
-      <ListContacts contacts={filteredContacts} onDeleteContact={deleteContact}/>
+      <ListContacts />
     </div>
   );
 }
