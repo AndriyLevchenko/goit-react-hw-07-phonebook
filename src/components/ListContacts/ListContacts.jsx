@@ -8,9 +8,10 @@ import css from 'components/ListContacts/ListContacts.module.css';
 export const ListContacts = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+  console.log(contacts)
   const filter = useSelector(getFilter);
 
-  const filteredContacts = contacts.filter(contact => 
+  const filteredContacts = contacts?.filter(contact => 
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
