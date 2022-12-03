@@ -4,7 +4,7 @@ import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
 import css from 'components/Form/Form.module.css';
 
-export const Form = ({onSubmit}) => {
+export const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
