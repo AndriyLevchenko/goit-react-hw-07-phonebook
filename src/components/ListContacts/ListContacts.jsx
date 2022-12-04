@@ -10,25 +10,22 @@ export const ListContacts = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
 
-  const normalizedFilter = filter.toLowerCase();
   const filteredContacts = contacts.filter(contact => 
-     contact.name.toLowerCase().includes(normalizedFilter)
-    );
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
-  if (filteredContacts) {
-    return (
-      <ul>{filteredContacts.map(({ id, name, number }) => (
-        <li key={id} className={css.titleName}>
-        <p className={css.name}>: {name}: {number}</p>
-        <button 
-        className={css.button} 
-        type="button"
-        onClick={() => dispatch(deleteContact(id))}
-        >Delete</button>
-        </li>)
-      )}</ul>
-    )
-  }
+  return (
+    <ul>{filteredContacts.map(({ id, name, number }) => (
+      <li key={id} className={css.titleName}>
+      <p className={css.name}>: {name}: {number}</p>
+      <button 
+      className={css.button} 
+      type="button"
+      onClick={() => dispatch(deleteContact(id))}
+      >Delete</button>
+      </li>)
+    )}</ul>
+  )
 }
 
 // ListContacts.propTypes = {
