@@ -1,8 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contactsSlice';
-import { getContacts, getFilter } from 'redux/selectors';
-// import PropTypes from "prop-types";
+import { getContacts, getFilter } from "redux/selectors";
 import css from 'components/ListContacts/ListContacts.module.css';
 
 export const ListContacts = () => {
@@ -21,19 +20,10 @@ export const ListContacts = () => {
       <button 
       className={css.button} 
       type="button"
-      onClick={() => dispatch(deleteContact(id))}
+      onClick={() => dispatch(deleteContact({id}))}
       >Delete</button>
       </li>)
     )}</ul>
   )
 }
 
-// ListContacts.propTypes = {
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     }).isRequired
-//   ),
-// };

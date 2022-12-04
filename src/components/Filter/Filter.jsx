@@ -3,7 +3,6 @@ import { nanoid } from 'nanoid';
 import { inputFilterForm } from 'redux/contactsSlice';
 import { getFilter } from 'redux/selectors';
 
-// import PropTypes from 'prop-types';
 import css from 'components/Filter/Filter.module.css';
 
 export const Filter = () => {
@@ -27,8 +26,3 @@ export const Filter = () => {
         </div>
     )
 }
-
-// Filter.propTypes = {
-//     value: PropTypes.string.isRequired,
-//     onChange: PropTypes.func.isRequired,
-// };
