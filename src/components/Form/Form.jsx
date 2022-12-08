@@ -6,7 +6,7 @@ import css from 'components/Form/Form.module.css';
 
 export const Form = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setNumber] = useState('');
 
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
@@ -27,7 +27,7 @@ export const Form = () => {
     ) {
       return alert(`${name} is already in contacts`);
     } else {
-      dispatch(addContact({name, number}));
+      dispatch(addContact({name, phone}));
     }
     setName ('');
     setNumber ('');
@@ -52,7 +52,7 @@ export const Form = () => {
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
-        value={number}
+        value={phone}
         onChange={inputChangeNumber}
       />
       <button 
