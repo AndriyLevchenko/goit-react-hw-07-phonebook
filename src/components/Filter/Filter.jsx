@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { inputFilterForm } from 'redux/contactsSlice';
-import { getFilter } from 'redux/selectors';
+import { inputFilterForm } from 'redux/filterSlice';
+import { selectFilter } from 'redux/selectors';
 
 import css from 'components/Filter/Filter.module.css';
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    const filter = useSelector(getFilter);
+    const filter = useSelector(selectFilter);
     const inputID = nanoid();
     return (
         <div>

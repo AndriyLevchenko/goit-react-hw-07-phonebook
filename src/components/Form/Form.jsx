@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
-import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/createApiSlice';
+import { selectContacts } from 'redux/selectors';
 import css from 'components/Form/Form.module.css';
 
 export const Form = () => {
@@ -9,7 +9,7 @@ export const Form = () => {
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const inputChangeName = event => {
     setName(event.currentTarget.value)
